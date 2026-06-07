@@ -30,6 +30,7 @@ Every cursor is a true `.cur` file with a 32-bit alpha channel and multiple embe
 | `12-diag2.cur` | Diagonal Resize 2 | center |
 | `13-link.cur` | Link Select (hand) | index fingertip |
 | `clawd-pointer.cur` | Bonus mascot pointer (arrow + Clawd) | arrow tip |
+| `06-text-clawd.cur` | Bonus mascot Text Select (Clawd typing) | I-beam center |
 
 > Move and Alternate Select are intentionally left to the system default.
 
@@ -54,7 +55,11 @@ Every cursor is a true `.cur` file with a 32-bit alpha channel and multiple embe
 
 Settings → search **"Change mouse cursor"** → **Pointers** tab → pick a state (e.g. *Normal Select*) → **Browse** → choose the matching `.cur`. Click **Save As…** to keep it as a reusable scheme.
 
-To use the **mascot pointer**, set *Normal Select* to `clawd-pointer.cur`.
+To use the **mascot variants**, set *Normal Select* to `clawd-pointer.cur` and *Text Select* to `06-text-clawd.cur`.
+
+<p align="center">
+  <img src="preview/clawd-text.png" width="180" alt="Clawd typing — text-select mascot variant">
+</p>
 
 ### Uninstall
 
