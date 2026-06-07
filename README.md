@@ -1,6 +1,6 @@
 # 🦀 Clawd Cursor
 
-A pixel-art Windows cursor pack starring **Clawd**, a little coral crab. Hand-built, transparent, and ready to install — including a full 12-state scheme plus a bonus "mascot" pointer where Clawd tags along under the arrow.
+A pixel-art cursor pack starring **Clawd**, a little coral crab — hand-built, transparent, multi-resolution, and ready to install on **Windows** and **Linux**. Includes a full 12-state scheme plus bonus "mascot" variants where Clawd tags along under the arrow, types under the I-beam, or clicks alongside the hand pointer.
 
 <p align="center">
   <img src="preview/clawd-pointer.png" width="260" alt="Clawd mascot pointer">
@@ -34,6 +34,8 @@ Every cursor is a true `.cur` file with a 32-bit alpha channel and multiple embe
 | `13-link-clawd.cur` | Bonus mascot Link Select (Clawd clicking a mouse) | index fingertip |
 
 > Move and Alternate Select are intentionally left to the system default.
+> 
+> The `linux/` directory contains pre-converted Xcursor files, an `index.theme`, and an automated install script.
 
 <p align="center">
   <img src="preview/clawd-hand.png" width="180" alt="Clawd hand / link-select cursor">
@@ -66,6 +68,57 @@ To use the **mascot variants**, set *Normal Select* to `clawd-pointer.cur`, *Tex
 ### Uninstall
 
 Pointers tab → switch the scheme back to **Windows Default** → Apply. To fully remove: delete `C:\Windows\Cursors\Clawd\` and the `Clawd` entry under `HKCU\Control Panel\Cursors\Schemes`.
+
+## Linux (GNOME / KDE / XFCE …)
+
+Pre-converted Xcursor files are in `linux/cursors/`. One command:
+
+```bash
+linux/install.sh
+```
+
+This converts `.cur` → Xcursor (via `uvx win2xcur`), installs to `~/.local/share/icons/Clawd/`, maps all Xcursor standard names, and applies the theme via `gsettings`.
+
+### Manual
+
+1. Copy the Xcursor files and theme definition into place:
+   ```bash
+   mkdir -p ~/.local/share/icons/Clawd/cursors
+   cp linux/cursors/* ~/.local/share/icons/Clawd/cursors/
+   cp linux/index.theme ~/.local/share/icons/Clawd/
+   ```
+2. Create the Xcursor alias copies inside `~/.local/share/icons/Clawd/cursors/`:
+   ```bash
+   cd ~/.local/share/icons/Clawd/cursors
+   for a in left_ptr default arrow; do cp 01-normal "$a"; done
+   for a in hand2 hand pointing_hand pointer; do cp 13-link "$a"; done
+   for a in xterm ibeam text; do cp 06-text "$a"; done
+   # … see install.sh for the full mapping
+   ```
+3. Apply:
+   ```bash
+   gsettings set org.gnome.desktop.interface cursor-theme "Clawd"
+   ```
+
+### Mascot variants
+
+Set Clawd as the pointer companion:
+
+```bash
+cd ~/.local/share/icons/Clawd/cursors
+cp clawd-pointer       left_ptr default arrow    # Clawd under the arrow
+cp 06-text-clawd-ibeam xterm ibeam text          # Clawd typing in the I-beam
+cp 13-link-clawd       hand2 hand pointing_hand  # Clawd clicking
+```
+
+Wayland apps pick it up immediately. XWayland apps (Electron, Chromium) may need a re-login.
+
+### Uninstall
+
+```bash
+gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
+rm -rf ~/.local/share/icons/Clawd
+```
 
 ## macOS
 
