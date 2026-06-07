@@ -31,6 +31,7 @@ Every cursor is a true `.cur` file with a 32-bit alpha channel and multiple embe
 | `13-link.cur` | Link Select (hand) | index fingertip |
 | `clawd-pointer.cur` | Bonus mascot pointer (arrow + Clawd) | arrow tip |
 | `06-text-clawd.cur` | Bonus mascot Text Select (Clawd typing) | I-beam center |
+| `13-link-clawd.cur` | Bonus mascot Link Select (Clawd clicking a mouse) | index fingertip |
 
 > Move and Alternate Select are intentionally left to the system default.
 
@@ -55,10 +56,11 @@ Every cursor is a true `.cur` file with a 32-bit alpha channel and multiple embe
 
 Settings → search **"Change mouse cursor"** → **Pointers** tab → pick a state (e.g. *Normal Select*) → **Browse** → choose the matching `.cur`. Click **Save As…** to keep it as a reusable scheme.
 
-To use the **mascot variants**, set *Normal Select* to `clawd-pointer.cur` and *Text Select* to `06-text-clawd.cur`.
+To use the **mascot variants**, set *Normal Select* to `clawd-pointer.cur`, *Text Select* to `06-text-clawd.cur`, and *Link Select* to `13-link-clawd.cur`.
 
 <p align="center">
   <img src="preview/clawd-text.png" width="180" alt="Clawd typing — text-select mascot variant">
+  <img src="preview/clawd-link.png" width="180" alt="Clawd clicking a mouse — link-select mascot variant">
 </p>
 
 ### Uninstall
