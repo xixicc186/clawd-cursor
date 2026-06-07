@@ -1,0 +1,70 @@
+; ============================================================
+;  Clawd 像素鼠标指针  —  一键安装
+;  用法：右键此文件 → 安装（Install）
+;  会把同目录的 .cur 拷到 %WinDir%\Cursors\Clawd\ 并注册名为
+;  "Clawd" 的指针方案，同时设为当前生效方案。
+;  装完若指针没立即变，注销重登一次，或运行 README 里的刷新命令。
+; ============================================================
+
+[Version]
+signature="$Windows NT$"
+
+[DefaultInstall]
+CopyFiles = Scheme.Cur
+AddReg    = Scheme.Reg, Active.Reg
+
+[DestinationDirs]
+Scheme.Cur = 10,"%CUR_DIR%"          ; 10 = %WinDir%
+
+; -------- 复制的光标文件（须与本 .inf 同目录）--------
+[Scheme.Cur]
+"01-normal.cur"
+"02-help.cur"
+"03-working.cur"
+"04-busy.cur"
+"05-precision.cur"
+"06-text.cur"
+"07-handwriting.cur"
+"08-unavailable.cur"
+"09-vresize.cur"
+"10-hresize.cur"
+"11-diag1.cur"
+"12-diag2.cur"
+
+; -------- 注册方案到“方案”下拉列表 --------
+; 15 个槽位固定顺序，缺省的留空（移动/候选/链接手形用系统默认）
+[Scheme.Reg]
+HKCU,"Control Panel\Cursors\Schemes",%SCHEME_NAME%,0x00020000,"%10%\%CUR_DIR%\%pArrow%,%10%\%CUR_DIR%\%pHelp%,%10%\%CUR_DIR%\%pWork%,%10%\%CUR_DIR%\%pBusy%,%10%\%CUR_DIR%\%pCross%,%10%\%CUR_DIR%\%pText%,%10%\%CUR_DIR%\%pPen%,%10%\%CUR_DIR%\%pNo%,%10%\%CUR_DIR%\%pVert%,%10%\%CUR_DIR%\%pHorz%,%10%\%CUR_DIR%\%pDgn1%,%10%\%CUR_DIR%\%pDgn2%,,,"
+
+; -------- 同时设为当前生效的指针（立即/重登后生效）--------
+[Active.Reg]
+HKCU,"Control Panel\Cursors",,0x00020000,%SCHEME_NAME%
+HKCU,"Control Panel\Cursors","Arrow",0x00020000,"%10%\%CUR_DIR%\%pArrow%"
+HKCU,"Control Panel\Cursors","Help",0x00020000,"%10%\%CUR_DIR%\%pHelp%"
+HKCU,"Control Panel\Cursors","AppStarting",0x00020000,"%10%\%CUR_DIR%\%pWork%"
+HKCU,"Control Panel\Cursors","Wait",0x00020000,"%10%\%CUR_DIR%\%pBusy%"
+HKCU,"Control Panel\Cursors","Crosshair",0x00020000,"%10%\%CUR_DIR%\%pCross%"
+HKCU,"Control Panel\Cursors","IBeam",0x00020000,"%10%\%CUR_DIR%\%pText%"
+HKCU,"Control Panel\Cursors","NWPen",0x00020000,"%10%\%CUR_DIR%\%pPen%"
+HKCU,"Control Panel\Cursors","No",0x00020000,"%10%\%CUR_DIR%\%pNo%"
+HKCU,"Control Panel\Cursors","SizeNS",0x00020000,"%10%\%CUR_DIR%\%pVert%"
+HKCU,"Control Panel\Cursors","SizeWE",0x00020000,"%10%\%CUR_DIR%\%pHorz%"
+HKCU,"Control Panel\Cursors","SizeNWSE",0x00020000,"%10%\%CUR_DIR%\%pDgn1%"
+HKCU,"Control Panel\Cursors","SizeNESW",0x00020000,"%10%\%CUR_DIR%\%pDgn2%"
+
+; -------- 字符串表 --------
+[Strings]
+CUR_DIR     = "Cursors\Clawd"
+SCHEME_NAME = "Clawd"
+pArrow = "01-normal.cur"
+pHelp  = "02-help.cur"
+pWork  = "03-working.cur"
+pBusy  = "04-busy.cur"
+pCross = "05-precision.cur"
+pText  = "06-text.cur"
+pPen   = "07-handwriting.cur"
+pNo    = "08-unavailable.cur"
+pVert  = "09-vresize.cur"
+pHorz  = "10-hresize.cur"
+pDgn1  = "11-diag1.cur"
+pDgn2  = "12-diag2.cur"
