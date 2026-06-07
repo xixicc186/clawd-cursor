@@ -31,6 +31,7 @@ Every cursor is a true `.cur` file with a 32-bit alpha channel and multiple embe
 | `13-link.cur` | Link Select (hand) | index fingertip |
 | `clawd-pointer.cur` | Bonus mascot pointer (arrow + Clawd) | arrow tip |
 | `06-text-clawd.cur` | Bonus mascot Text Select (Clawd typing) | I-beam center |
+| `06-text-clawd-ibeam.cur` | Bonus mascot Text Select (Clawd typing under a blinking-style I-beam) | I-beam center |
 | `13-link-clawd.cur` | Bonus mascot Link Select (Clawd clicking a mouse) | index fingertip |
 
 > Move and Alternate Select are intentionally left to the system default.
