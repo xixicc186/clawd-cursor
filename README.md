@@ -28,9 +28,14 @@ Every cursor is a true `.cur` file with a 32-bit alpha channel and multiple embe
 | `10-hresize.cur` | Horizontal Resize | center |
 | `11-diag1.cur` | Diagonal Resize 1 | center |
 | `12-diag2.cur` | Diagonal Resize 2 | center |
+| `13-link.cur` | Link Select (hand) | index fingertip |
 | `clawd-pointer.cur` | Bonus mascot pointer (arrow + Clawd) | arrow tip |
 
-> Move, Alternate Select, and the link Hand are intentionally left to the system default.
+> Move and Alternate Select are intentionally left to the system default.
+
+<p align="center">
+  <img src="preview/clawd-hand.png" width="180" alt="Clawd hand / link-select cursor">
+</p>
 
 ## Install (Windows)
 

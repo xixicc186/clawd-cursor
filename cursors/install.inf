@@ -30,11 +30,12 @@ Scheme.Cur = 10,"%CUR_DIR%"          ; 10 = %WinDir%
 "10-hresize.cur"
 "11-diag1.cur"
 "12-diag2.cur"
+"13-link.cur"
 
 ; -------- 注册方案到“方案”下拉列表 --------
-; 15 个槽位固定顺序，缺省的留空（移动/候选/链接手形用系统默认）
+; 15 个槽位固定顺序，缺省的留空（移动/候选用系统默认；第15槽=链接手形）
 [Scheme.Reg]
-HKCU,"Control Panel\Cursors\Schemes",%SCHEME_NAME%,0x00020000,"%10%\%CUR_DIR%\%pArrow%,%10%\%CUR_DIR%\%pHelp%,%10%\%CUR_DIR%\%pWork%,%10%\%CUR_DIR%\%pBusy%,%10%\%CUR_DIR%\%pCross%,%10%\%CUR_DIR%\%pText%,%10%\%CUR_DIR%\%pPen%,%10%\%CUR_DIR%\%pNo%,%10%\%CUR_DIR%\%pVert%,%10%\%CUR_DIR%\%pHorz%,%10%\%CUR_DIR%\%pDgn1%,%10%\%CUR_DIR%\%pDgn2%,,,"
+HKCU,"Control Panel\Cursors\Schemes",%SCHEME_NAME%,0x00020000,"%10%\%CUR_DIR%\%pArrow%,%10%\%CUR_DIR%\%pHelp%,%10%\%CUR_DIR%\%pWork%,%10%\%CUR_DIR%\%pBusy%,%10%\%CUR_DIR%\%pCross%,%10%\%CUR_DIR%\%pText%,%10%\%CUR_DIR%\%pPen%,%10%\%CUR_DIR%\%pNo%,%10%\%CUR_DIR%\%pVert%,%10%\%CUR_DIR%\%pHorz%,%10%\%CUR_DIR%\%pDgn1%,%10%\%CUR_DIR%\%pDgn2%,,,%10%\%CUR_DIR%\%pLink%"
 
 ; -------- 同时设为当前生效的指针（立即/重登后生效）--------
 [Active.Reg]
@@ -51,6 +52,7 @@ HKCU,"Control Panel\Cursors","SizeNS",0x00020000,"%10%\%CUR_DIR%\%pVert%"
 HKCU,"Control Panel\Cursors","SizeWE",0x00020000,"%10%\%CUR_DIR%\%pHorz%"
 HKCU,"Control Panel\Cursors","SizeNWSE",0x00020000,"%10%\%CUR_DIR%\%pDgn1%"
 HKCU,"Control Panel\Cursors","SizeNESW",0x00020000,"%10%\%CUR_DIR%\%pDgn2%"
+HKCU,"Control Panel\Cursors","Hand",0x00020000,"%10%\%CUR_DIR%\%pLink%"
 
 ; -------- 字符串表 --------
 [Strings]
@@ -68,3 +70,4 @@ pVert  = "09-vresize.cur"
 pHorz  = "10-hresize.cur"
 pDgn1  = "11-diag1.cur"
 pDgn2  = "12-diag2.cur"
+pLink  = "13-link.cur"
